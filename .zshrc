@@ -77,3 +77,11 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/cesarc/Library/Application Support/Herd/
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+function commit() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
+
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
